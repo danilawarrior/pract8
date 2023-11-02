@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="pract8.ListView"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="ListView" Appearing="ContentPage_Appearing">
+    <VerticalStackLayout Padding="10" Spacing="10">
+        <CollectionView x:Name="StudentsListView" SelectionMode="Single">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Row="0" Text="{Binding FullName, StringFormat='ФИО: {0}'}" />
+                        <Label Grid.Row="1" Text="{Binding Gender, StringFormat='Пол: {0}'}" />
+                        <Label Grid.Row="2" Text="{Binding Age, StringFormat='Возраст: {0}'}" />
+                        <Label Grid.Row="3" Text="{Binding AvgRate, StringFormat='Средний балл: {0}'}" />
+
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button Clicked="Load_Clicked" Text="обновить" />
+        <Button Clicked="Edit_Clicked" Text="редактировать" />
+
+        <Button Clicked="Remove_Clicked" Text="Удалить" />
+    </VerticalStackLayout>
+</ContentPage>                                                                                                                                                                                                                                      

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="pract8.MainPage"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+
+    <ScrollView>
+
+        <StackLayout Padding="10" Spacing="15">
+            <Label Text="ФИО" />
+            <Entry x:Name="FullNameEntry" />
+
+            <Label Text="Пол" />
+            <Picker x:Name="GenderPicker"/>
+
+            <Label Text="Возраст" />
+            <Entry x:Name="AgeEntry" Keyboard="Numeric" />
+
+            <Button Clicked="LoadPhoto_Click" Text="Загрузить фото" />
+            <Image x:Name="UserImage" WidthRequest="250" HeightRequest="250"/>
+
+            <Label Text="Нужно общежитие" />
+            <Switch x:Name="NeedsDormitorySwitch" />
+
+            <Label Text="Является старостой" />
+            <Switch x:Name="IsMonitorSwitch" />
+            <HorizontalStackLayout>
+                <Label Text="Средний бал" VerticalOptions="Center" />
+                <Stepper x:Name="stepperAvgRate"
+                         Increment="0.1" Maximum="5.0" Minimum="2.0"
+                         Value="0" />
+                <Label Text="{Binding Source={x:Reference stepperAvgRate}, Path=Value}" VerticalOptions="Center" />
+            </HorizontalStackLayout>
+
+            <Button Clicked="OnSaveClicked" Text="Сохранить" />
+        </StackLayout>
+    </ScrollView>
+
+
+
+</ContentPage>
