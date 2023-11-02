@@ -87,21 +87,7 @@ namespace pract8
 
         }
 
-        private async Task SaveStudentWithPhotoAsync()
-        {
-            if (MediaPicker.Default.IsCaptureSupported)
-            {
-                myPhoto = await MediaPicker.Default.PickPhotoAsync();
-                if (myPhoto != null)
-                {
-                    UserImage.Source = myPhoto.FullPath;
-                }
-            }
-            else
-            {
-                await Shell.Current.DisplayAlert("OOPS", "Your device isn't supported", "OK");
-            }
-        }
+  
 
         private async void LoadPhoto_Click(object sender, EventArgs e)
         {
