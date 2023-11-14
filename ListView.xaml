@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage x:Class="pract8.ListView"
              xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             Title="ListView" Appearing="ContentPage_Appearing">
+             Title="ListView"
+             Appearing="ContentPage_Appearing">
+
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="dotnet_bot.svg" Order="Primary"
+                     Priority="0" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="TextColor" Value="Purple" />
+                <Setter Property="CornerRadius" Value="8" />
+                <Setter Property="WidthRequest" Value="310" />
+                <Setter Property="HeightRequest" Value="50" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <VerticalStackLayout Padding="10" Spacing="10">
         <CollectionView x:Name="StudentsListView" SelectionMode="Single">
             <CollectionView.ItemTemplate>
